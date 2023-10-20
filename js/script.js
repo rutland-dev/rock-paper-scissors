@@ -1,6 +1,6 @@
 // Create an array with the choices rock, paper, and scissors.
 
-const choices = ["rock", "paper", "scissors"]
+const choices = ["rock", "paper", "scissors"];
 
 let playerScore = 0;
 let computerScore = 0;
@@ -10,12 +10,24 @@ let numberOfRounds = 0;
 
 function getComputerChoice() {
     return choices[(Math.floor(Math.random() * choices.length))];
-}
+};
 
 // Write a function that gets the player's choice. Make sure it will only accept an appropriate answer.
 
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        const currentImage = document.querySelector('#result-container img');
+        currentImage.remove();
+        const resultContainer = document.querySelector('#result-container');
+        const resultImage = document.createElement('img');
+        resultImage.src = `images/${button.id}.png`;
+        resultContainer.appendChild(resultImage);
+    });
+});
+
 function getPlayerChoice() {
-    let playerSelection = parseInt(prompt(`Current Score - Player: ${playerScore}. Computer: ${computerScore}.\nChoose (1) for rock, (2) for paper, or (3) for scissors: `));
     if (playerSelection === 1) {
         return "rock";
     } else if (playerSelection === 2) {
@@ -26,7 +38,7 @@ function getPlayerChoice() {
         alert("Please make a valid selection");
         return getPlayerChoice();
     }
-}
+};
 
 // Write a function that plays a single round of the game. It should take two parameters - playerSelection and computerSelection - and then
 // return a string that declares the winner.
@@ -65,24 +77,23 @@ function round() {
             console.log("Scissors cut paper. You win!")
         }
     }
-}
+};
 
 // Write a function called game(). Put the previous function in this function to make it loop 5 times ( a five round game ), keep score,
 // and declare a winner at the end.
 
-function game() {
-    while (numberOfRounds < 5) {
-        round();
-    }
-    console.log(`Player Score is: ${playerScore}`);
-    console.log(`Computer Score is: ${computerScore}`);
-    if (playerScore === computerScore) {
-        console.log("Draw! No winner.");
-    } else if (playerScore > computerScore) {
-        console.log("You win!");
-    } else {
-        console.log("Computer wins!");
-    }
-}
-
-game();
+// **** Replace game() function with this to restore 5 round game ****
+// function game() {
+//     while (numberOfRounds < 5) {
+//         round();
+//     }
+//     console.log(`Player Score is: ${playerScore}`);
+//     console.log(`Computer Score is: ${computerScore}`);
+//     if (playerScore === computerScore) {
+//         console.log("Draw! No winner.");
+//     } else if (playerScore > computerScore) {
+//         console.log("You win!");
+//     } else {
+//         console.log("Computer wins!");
+//     }
+// }
