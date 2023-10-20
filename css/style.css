@@ -5,15 +5,67 @@
     color: black;
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .logo-container {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo-container img {
+    display: flex;
+    width: 400px;
+    height: auto;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.logo-container img {
-    width: 400px;
-    height: auto;
+.score-book-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+
+}
+
+.score-book-container img {
+    width: 300px;
+}
+
+#inner-score-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 150px;
+    background-color: transparent;
+    position: absolute;
+    margin-right: 100px;
+}
+
+#player-score {
+    background-color: transparent;
+}
+
+#computer-score {
+    background-color: transparent;
+}
+
+#player-score p {
+    background-color: transparent;
+}
+
+#computer-score p {
+    background-color: transparent;
 }
 
 .main-container {
@@ -22,6 +74,29 @@
     align-items: center;
     justify-content: center;
     font-size: 30px;
+}
+
+.table-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.table-container img {
+    height: 400px;
+}
+
+#result-container {
+    background-color: transparent;
+    position: absolute;
+    margin-bottom: 200px;
+}
+
+#result-image {
+    background-color: transparent;
+    width: 150px;
+    height: auto;
 }
 
 .buttons-container {
