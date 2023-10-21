@@ -1,123 +1,87 @@
 * {
     background-color: lightgray;
     font-family: 'Pixelify Sans', sans-serif;
-    /* font-family: 'Roboto', sans-serif; */
     color: black;
+    font-size: 2vw;
+    margin: 0;
+    padding: 0;
 }
 
-.header {
+.header, .logo-container, .score-container, .score-book-container, #inner-score-container,
+.main-container, .table-container, .buttons-container {
     display: flex;
     align-items: center;
-    justify-content: space-around;
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
+.header, .logo-container {
     justify-content: space-around;
 }
 
 .logo-container img {
-    display: flex;
-    width: 400px;
+    width: 15vw;
     height: auto;
 }
 
-.score-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.score-container, .score-book-container, .main-container, .table-container {
     justify-content: center;
 }
 
-.score-book-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 50px;
-
+.score-container, .main-container {
+    flex-direction: column;
 }
 
 .score-book-container img {
-    width: 300px;
+    width: 10vw;
+    height: auto;
+}
+
+#inner-score-container, #player-score, #computer-score, #player-score p, #computer-score p,
+#result-container, #result-container img {
+    background-color: transparent;
 }
 
 #inner-score-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 150px;
-    background-color: transparent;
-    position: absolute;
-    margin-right: 100px;
-}
-
-#player-score {
-    background-color: transparent;
-}
-
-#computer-score {
-    background-color: transparent;
-}
-
-#player-score p {
-    background-color: transparent;
-}
-
-#computer-score p {
-    background-color: transparent;
-}
-
-.main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    font-size: 30px;
+    width: 5vw;
+    gap: 2vw;
+    position: absolute;
+    margin-right: 4vw;
+}
+
+#result-text {
+    margin: 2vw;
 }
 
 .table-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 40px;
+    margin-bottom: 2vw;
 }
 
 .table-container img {
-    height: 400px;
+    width: 20vw;
+    height: auto;
 }
 
 #result-container {
-    background-color: transparent;
     position: absolute;
-    margin-bottom: 200px;
+    margin-bottom: 8vw;
 }
 
 #result-container img {
-    background-color: transparent;
-    width: 150px;
+    width: 5vw;
     height: auto;
 }
 
 .buttons-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 1000px;
-
+    gap: 3vw;
 }
 
 .buttons-container button {
     border: none;
-    padding: 0;
-    margin: 0;
 }
 
 .buttons-container img {
-    height: 200px;
-    width: auto;
-    padding: 0;
-    margin: 0;
+    width: 10vw;
+    height: auto;
 }
 
 .buttons-container img:active {
