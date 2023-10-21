@@ -19,7 +19,14 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         const currentImage = document.querySelector('#result-container img');
+
         currentImage.remove();
+
+        let resultText = document.querySelector('#result-text');
+        let resultTextBottom = document.querySelector('#result-text-bottom');
+
+        resultText.textContent = '';
+        resultTextBottom.textContent = '';
         
         round(button.id);
     });
@@ -41,7 +48,12 @@ function round(choice) {
         resultContainer.appendChild(resultImage);
 
         numberOfRounds = numberOfRounds - 1;
-        console.log("Draw!");
+
+        let resultText = document.querySelector('#result-text');
+        let resultTextBottom = document.querySelector('#result-text-bottom')
+
+        resultText.textContent = `You chose ${playerSelection.split("-")[0]}. Computer chose ${computerSelection.split("-")[0]}.`
+        resultTextBottom.textContent = "Draw!"
     } else if (playerSelection === "rock-button") {
         if (computerSelection === "paper-button") {
             const resultContainer = document.querySelector('#result-container');
@@ -49,13 +61,17 @@ function round(choice) {
             
             resultImage.src = 'images/paper-covers-rock.png';
             resultContainer.appendChild(resultImage);
+
+            let resultText = document.querySelector('#result-text');
+            let resultTextBottom = document.querySelector('#result-text-bottom');
+
+            resultText.textContent = `You chose ${playerSelection.split("-")[0]}. Computer chose ${computerSelection.split("-")[0]}.`;
+            resultTextBottom.textContent = "Paper covers rock. Computer Wins!";
             
             computerScore = computerScore + 1;
             
             let computerScoreText = document.querySelector('#computer-score-number');
             computerScoreText.textContent = computerScore.toString();
-            
-            console.log("Paper covers rock. Computer wins!");
         } else {
             const resultContainer = document.querySelector('#result-container');
             const resultImage = document.createElement('img');
@@ -63,11 +79,15 @@ function round(choice) {
             resultImage.src = 'images/rock-breaks-scissors.png';
             resultContainer.appendChild(resultImage);
 
+            let resultText = document.querySelector('#result-text');
+            let resultTextBottom = document.querySelector('#result-text-bottom');
+
+            resultText.textContent = `You chose ${playerSelection.split("-")[0]}. Computer chose ${computerSelection.split("-")[0]}.`;
+            resultTextBottom.textContent = "Rock breaks scissors. You win!";
+
             playerScore = playerScore + 1;
             let playerScoreText = document.querySelector('#player-score-number');
             playerScoreText.textContent = playerScore.toString();
-
-            console.log("Rock breaks scissors. You win!");
         }
     } else if (playerSelection === "paper-button") {
         if (computerSelection === "rock-button") {
@@ -77,11 +97,15 @@ function round(choice) {
             resultImage.src = 'images/paper-covers-rock.png';
             resultContainer.appendChild(resultImage);
 
+            let resultText = document.querySelector('#result-text');
+            let resultTextBottom = document.querySelector('#result-text-bottom');
+
+            resultText.textContent = `You chose ${playerSelection.split("-")[0]}. Computer chose ${computerSelection.split("-")[0]}.`;
+            resultTextBottom.textContent = "Paper covers rock. You win!";
+
             playerScore = playerScore + 1;
             let playerScoreText = document.querySelector('#player-score-number');
             playerScoreText.textContent = playerScore.toString();
-
-            console.log("Paper covers rock. You win!");
         } else {
             const resultContainer = document.querySelector('#result-container');
             const resultImage = document.createElement('img');
@@ -89,11 +113,15 @@ function round(choice) {
             resultImage.src = 'images/scissors-cut-paper.png';
             resultContainer.appendChild(resultImage);
 
+            let resultText = document.querySelector('#result-text');
+            let resultTextBottom = document.querySelector('#result-text-bottom');
+
+            resultText.textContent = `You chose ${playerSelection.split("-")[0]}. Computer chose ${computerSelection.split("-")[0]}.`;
+            resultTextBottom.textContent = "Scissors cut paper. Computer wins!";
+
             computerScore = computerScore + 1;
             let computerScoreText = document.querySelector('#computer-score-number');
             computerScoreText.textContent = computerScore.toString();
-
-            console.log("Scissors cuts paper. Computer wins!");
         }
     } else {
         if (computerSelection === "rock-button") {
@@ -103,12 +131,15 @@ function round(choice) {
             resultImage.src = 'images/rock-breaks-scissors.png';
             resultContainer.appendChild(resultImage);
 
-            computerScore = computerScore + 1;
+            let resultText = document.querySelector('#result-text');
+            let resultTextBottom = document.querySelector('#result-text-bottom');
+
+            resultText.textContent = `You chose ${playerSelection.split("-")[0]}. Computer chose ${computerSelection.split("-")[0]}.`;
+            resultTextBottom.textContent = "Rock breaks scissors. Computer wins!";
+
             computerScore = computerScore + 1;
             let computerScoreText = document.querySelector('#computer-score-number');
             computerScoreText.textContent = computerScore.toString();
-            
-            console.log("Rock breaks scissors. Computer wins!")
         } else {
             const resultContainer = document.querySelector('#result-container');
             const resultImage = document.createElement('img');
@@ -116,7 +147,12 @@ function round(choice) {
             resultImage.src = 'images/scissors-cut-paper.png';
             resultContainer.appendChild(resultImage);
 
-            playerScore = playerScore + 1;
+            let resultText = document.querySelector('#result-text');
+            let resultTextBottom = document.querySelector('#result-text-bottom');
+
+            resultText.textContent = `You chose ${playerSelection.split("-")[0]}. Computer chose ${computerSelection.split("-")[0]}.`;
+            resultTextBottom.textContent = "Scissors cut paper. You win!";
+
             playerScore = playerScore + 1;
             let playerScoreText = document.querySelector('#player-score-number');
             playerScoreText.textContent = playerScore.toString();

@@ -8,7 +8,7 @@
 }
 
 .header, .logo-container, .score-container, .score-book-container, #inner-score-container,
-.main-container, .table-container, .buttons-container {
+.main-container, .table-container, .buttons-container, #result-text, #result-text-bottom {
     display: flex;
     align-items: center;
 }
@@ -22,7 +22,8 @@
     height: auto;
 }
 
-.score-container, .score-book-container, .main-container, .table-container {
+.score-container, .score-book-container, .main-container, .table-container #result-text, #result-text-bottom,
+.buttons-container {
     justify-content: center;
 }
 
@@ -48,8 +49,13 @@
     margin-right: 4vw;
 }
 
-#result-text {
-    margin: 2vw;
+#result-text-container {
+    height: 10vh;
+}
+
+#result-text-bottom {
+    margin-bottom: 2vw;
+    margin-top: .3vw;
 }
 
 .table-container {
@@ -64,6 +70,7 @@
 #result-container {
     position: absolute;
     margin-bottom: 8vw;
+    margin-left: 7vw;
 }
 
 #result-container img {
@@ -72,7 +79,7 @@
 }
 
 .buttons-container {
-    gap: 3vw;
+    gap: 2vw;
 }
 
 .buttons-container button {
